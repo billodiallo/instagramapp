@@ -32,3 +32,14 @@ class Image(models.Model):
     def get_images(cls):
         images = Image.objects.all()
         return images
+
+    def __str__(cls):
+        images = Image.objects.all()
+        return images
+
+    class Comment(models.Model):
+        poster = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+        image = models.ForeignKey(Image,on_delete=models.CASCADE,
+        related_name='comments' ,null=True)
+        Comment = models.CharField(max_length=200, null=True)
+              
