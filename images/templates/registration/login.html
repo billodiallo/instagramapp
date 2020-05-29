@@ -1,0 +1,33 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="container-fluid mt-5 p-5">
+  <header style="font-size: 40px;"><i class="fab fa-instagram "></i> | 🅸🅽🆂🆃🅰🅿🅸🅲🅷🅰</a></header>
+  <div class="row">
+        <div class="col-lg-6 p-5">
+      <img src="https://clipart.info/images/ccovers/1505918650Platinum-Iphone-X-Transparent-Background.png" alt="" class="img-fluid">
+    </div>
+    <div class="col-lg-6 p-5">
+      {% if form.errors %}
+      <p>Some information might be incorrect</p>
+      {% endif %}
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Sign In</h3>
+        </div>
+        <div class="card-body">
+          <form action="/accounts/login/" method="post">
+            {% csrf_token %} {% bootstrap_form form %}
+            <div class="form-group">
+              <input type="submit" class="btn btn-outline-primary btn-sm" value="login">
+            </div>
+            <input type="hidden" name="next" value="{{next}}">
+          </form>
+        </div>
+        <p class="text-center">Don't have an account?<a class="btn btn-default" href="/signup/">Sign Up</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

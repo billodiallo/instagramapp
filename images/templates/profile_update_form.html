@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+{{block.super}}
+<div class="container">
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+    <div class="card card-info mt-5">
+        <div class="card-header">
+            <h2>Edit Profile</h2>
+        </div>
+        <div class="card-body">
+          <form method="post">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Update">
+</form>
+
+                </form>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+</div>
+{% endblock %}

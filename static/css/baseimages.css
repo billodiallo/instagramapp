@@ -1,0 +1,51 @@
+.form-inline:focus{
+  outline: none;
+}
+.form-control {
+  font-family: "FontAwesome"
+}
+
+body {
+background-color: rgb(249, 249, 249);
+}
+
+.card-header{
+  background-color:white;
+}
+.img {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    div.col{
+        display: none;;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .stories {
+      display: none;
+    }
+}
+
+.modal-backdrop.show {
+    opacity: 0.8;
+}
+
+
+@media (min-width: 576px) {
+
+  .modal-dialog {  max-width:none;}
+}
+
+.modal-dialog {
+   width: 60%;
+  height: 60%;
+}
+
+.modal-body {
+   height: auto;
+  min-height: 100%;
+}
