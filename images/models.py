@@ -21,3 +21,12 @@ class Profile(models.Model):
          return profile
 
 
+class Image(models.Model):
+    posted_by = models.ForeignKey(User, null=True)
+    profile = models.ForeignKey(Profile,on_delete=models.CASCADE,null=True)
+    inst_image = models.ImageField(upload_to='pitch/' ,null=True)
+    caption = models.TextField(null=True)
+    likes = models.PositiveIntegerField(default=0)
+
+    @classmethod
+    def get_images
