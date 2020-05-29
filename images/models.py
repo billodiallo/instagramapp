@@ -42,4 +42,9 @@ class Image(models.Model):
         image = models.ForeignKey(Image,on_delete=models.CASCADE,
         related_name='comments' ,null=True)
         Comment = models.CharField(max_length=200, null=True)
-              
+    def __str__(self):
+        return self.comment
+
+    def save_comment(self):
+        self.save()
+          
