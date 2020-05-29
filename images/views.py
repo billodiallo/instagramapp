@@ -53,3 +53,23 @@ def activate(request, uidb64, token):
         return HttpResponse('Thank you for your email confirmation. <a href="https://.herokuapp.com"> Login </a> Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+
+@login_required(login_url='/accounts/login/')
+def home(request):
+    images = Image.get_images()
+    comments = Comment.get_comment()
+    profile = Profile.get_profile()
+
+    current_user = request.user
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = current_user
+            comment.save()
+        return redirect('home')
+
+    else:
+        form = CommentForm()
+
+    return render(request,"home.html",{"images":images, "comments":comments,"form": form,"profile":profile})
