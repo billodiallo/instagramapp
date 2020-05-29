@@ -15,7 +15,3 @@ class Profile(models.Model):
         profile = Profile.objects.all()
         return profile 
 
-****888
-1111
-1111
-11111
