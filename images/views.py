@@ -73,3 +73,11 @@ def home(request):
         form = CommentForm()
 
     return render(request,"home.html",{"images":images, "comments":comments,"form": form,"profile":profile})
+
+@login_required
+def profile(request,profile_id):
+
+    profile = Profile.objects.get(pk = profile_id)
+    images = Image.objects.filter(profile_id=profile).all()
+
+    return render(request,"profile.html",{"profile":profile,"images":images})
