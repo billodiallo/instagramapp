@@ -11,3 +11,8 @@ class UploadForm(forms.Models):
         model = Profile
         exclude = ['user']
 
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        exclude =['poster','image']
+        
