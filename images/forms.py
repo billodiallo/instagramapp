@@ -6,4 +6,8 @@ class NewProfile(forms.ModelForm):
         model = Profile 
         exclude = ['user']
 
-class        
+class UploadForm(forms.Models):
+    class Meta:
+        model = Profile
+        exclude = ['user']
+
