@@ -37,3 +37,19 @@ def signup(request):
     else:
         form = SignupForm()
     return render(request, 'signup.html', {'form': form})
+
+
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        current_user = User.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        current_user = None
+    if current_user is not None and account_activation_token.check_token(current_user, token):
+        current_user.is_active = True
+        current_user.save()
+        login(request, current_user)
+        # return redirect('home')
+        return HttpResponse('Thank you for your email confirmation. <a href="https://.herokuapp.com"> Login </a> Now you can login your account.')
+    else:
+        return HttpResponse('Activation link is invalid!')
