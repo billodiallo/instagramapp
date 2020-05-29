@@ -47,4 +47,12 @@ class Image(models.Model):
 
     def save_comment(self):
         self.save()
-          
+
+    @classmethod
+    def get_comment(cls):
+        comment = Comment.objects.all()
+        return comment 
+
+class Follow(models.Model):
+    users=models.ManyToManyField(User,related_name='follow')
+    current_user=models.ForeignKey(User,related_name='c_user',null=True)
