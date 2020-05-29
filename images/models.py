@@ -29,4 +29,6 @@ class Image(models.Model):
     likes = models.PositiveIntegerField(default=0)
 
     @classmethod
-    def get_images
+    def get_images(cls):
+        images = Image.objects.all()
+        return images
