@@ -2,7 +2,7 @@
 
 ![INSTRAPICHA](/static/img/instapicha.png)
 
-## Built By [Tom Chege](https://github.com/emdeechege/)
+## Built By Mamadou Billo Diallo
 
 ## Description
 This is aclone of the popular social media application: Instagram. The application allows users to upload, like and comment on other peoples images. Images must have captions and users have profiles where they can see all their images. The admin is  currently responsible for editing or deleting images.
@@ -53,11 +53,6 @@ Admin should:
 * virtualenv
 * Requirements.txt
 
-### Cloning
-* In your terminal:
-
-        $ git clone https://github.com/emdeechege/Instrapicha
-        $ cd Instrapicha
 
 ## Running the Application
 * Creating the virtual environment
@@ -89,7 +84,7 @@ Admin should:
 
 ## License
 
-Copyright (c) 2018 emdeechege
+Copyright (c) 2020 BILLO
 
 ------------
 
