@@ -1,6 +1,3 @@
-# 🅸🅽🆂🆃🅰🅿🅸🅲🅷🅰
-
-![INSTRAPICHA](/static/img/instapicha.png)
 
 ## Built By Mamadou Billo Diallo
 
