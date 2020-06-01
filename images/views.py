@@ -11,6 +11,7 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
+from .forms import SignupForm
 
 # Create your views here.
 def signup(request):
@@ -21,7 +22,7 @@ def signup(request):
             current_user.is_active = False
             current_user.save()
             current_site = get_current_site(request)
-            mail_subject = 'Activate your instapicha account.'
+            mail_subject = 'Activate your instagram  account.'
             message = render_to_string('acc_active_email.html', {
                 'user': current_user,
                 'domain': current_site.domain,
