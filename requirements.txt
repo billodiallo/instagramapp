@@ -9,7 +9,7 @@ django-bootstrap4==0.0.7
 django-contrib-comments==1.9.0
 django-csvimport==2.15
 django-heroku==0.3.1
-django-registration==2.4.1
+django-registration==3.1.2
 django-tinymce==2.7.0
 gunicorn==19.9.0
 Pillow==5.2.0
